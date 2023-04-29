@@ -2,42 +2,46 @@ let userScore = 0;
 let pcScore = 0;
 let userChoice = 0;
 let ListID = ["1","2","3"];
-let actions = {
-    1: "rock",
-    2: "paper",
-    3: "scissors"
-}
+let actions = ["rock","paper","scissors"];
 
 let computerGame = function(){
-    let randomNumber = Math.floor(Math.random() * (3) + 1);
+    let randomNumber = Math.floor(Math.random() * (3));
+    console.log(randomNumber);
     return randomNumber;
 }
 
 function playRound(useroption, computer){
-    let msg = "";
-    if(useroption === computer){
-        msg = `It's a tie!`
+    if(actions[useroption] === actions[computer]){
+        return `It's a tigh!`
     }
-    else if(useroption>computer && useroption!=3){
-        msg = `You Scored. ${actions[useroption]} beats ${actions[computer]}!`;
+    else if(actions[useroption] > actions[computer] && actions[useroption] != 3){
         userScore++;
+        return `You Scored. ${actions[useroption]} beats ${actions[computer]}!`
     }
-    else if(useroption == 1 && computer == 3){
-        msg = `You Scored. ${actions[useroption]} beats ${actions[computer]}!`;
+    else if (actions[useroption] == "scissors" && actions[computer] == "paper"){
         userScore++;
+        return `You Scored. ${actions[useroption]} beats ${actions[computer]}!`
+    }
+    else if(actions[useroption] == "rock" && actions[computer] == "scissors"){
+        userScore++;
+        return  `You Scored. ${actions[useroption]} beats ${actions[computer]}!`
     }
     else{
-        msg = `You Lost. ${actions[computer]} beats ${actions[useroption]}!`;
         pcScore++;
+        return  `You Lost. ${actions[computer]} beats ${actions[useroption]}!`
     }
-    return msg;
 }
 
 function checkWin(){
-    let message = "";
-    if(userScore == 5) message = "You Won! Congrats!";
-    if(pcScore == 5) message = "You Lost!";
-    return message;
+    if(userScore>pcScore){
+        return "You Won! Congrats!";
+    } 
+    else if(userScore==pcScore){
+        return "It's tigh! Nice Try!";
+    }
+    else{
+        return "You Lost!";
+    }
 }
 
 function game(){
@@ -96,7 +100,7 @@ gameBoard.append(computerBox);
 document.body.appendChild(gameBoard);
 
 //create buttons for options
-for(let i = 1;i<4;i++){
+for(let i = 0;i<3;i++){
     const button = document.createElement("button");
     button.setAttribute('id',actions[i]);
     button.classList.add("game-board-buttons");
@@ -110,9 +114,15 @@ options.forEach((butt)=>{
     let num = 0;
     let attribute = butt.getAttribute('id');
     console.log(butt);
-    if(attribute == "rock") num=1;
-    else if(attribute == ("paper")) num = 2;
-    else num = 3;
+    if(attribute == "rock"){ 
+        num=0;
+    }
+    else if(attribute == ("paper")){
+        num = 1;
+    }
+    else{
+        num = 2;
+    }
     butt.addEventListener("click", ()=>{
         getUserChoice(num);
     });
