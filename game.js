@@ -65,7 +65,7 @@ let getUserChoice = function(num){
     console.log(userChoice);
 }
 
-let refreshGame =  function(){
+let refreshGame = function(){
     userScore = 0;
     pcScore = 0;
     computerAction.style.display = "none";
@@ -162,8 +162,8 @@ resultBox.append(resultButtonBox);
 //add event listenr to start,next,and refresh buttons
 let controlB = document.querySelectorAll(".control-button");
 controlB[0].addEventListener('click', ()=>{
-            game();
-        }   
+        game();
+    }   
 );
 controlB[1].addEventListener('click',(e)=>{
     next.style.display = "none";
