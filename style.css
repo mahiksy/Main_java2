@@ -1,0 +1,109 @@
+.game-board{
+    display: flex;
+    background-color: #b5e2fa;
+    width: 1000px;
+    height:400px;
+    margin-inline: auto;
+}
+
+.score-box{
+    display: flex;
+    background-color: #b5e2fa;
+    align-items: center;
+    justify-content: center;
+    width: 1000px;
+    height:50px;
+    margin-inline: auto;
+    font-size: 20px;
+    font-weight: bold;
+    color:#0081a7;
+}
+
+.button-box{
+    width: 250px;
+    height:350px;
+    display: flex;
+    gap:15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.game-board-buttons{
+    width: 100px;
+    height:100px;
+    border-radius: 50%;
+    border:none;
+}
+
+.game-board-buttons:focus{
+    opacity: 50%;
+}
+
+#rock{
+    background-image: url(./img/rock.png);
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+}
+
+#paper{
+    background-image: url(./img/paper.png);
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+}
+
+#scissors{
+    background-image: url(./img/scissors.jpg);
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+}
+
+.computer-action{
+    width: 100px;
+    height:100px;
+    border-radius: 50%;
+}
+
+.computer-box{
+    width: 250px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-box{
+    display: flex;
+    width:500px;
+    height:350px;
+    gap:80px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column  ;
+}
+.result-box p{
+    font-size: 22px;
+    font-weight: bold;
+    color: #0081a7;
+    text-align: center;
+}
+
+.result-button-box{
+    display: flex;
+    gap:45px;
+}
+
+.control-button{
+    width: 150px;
+    height: 50px;
+    background-color: #f7a072;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.result-button-box button:hover{
+    background-color: #eddea4;
+}
+
+
