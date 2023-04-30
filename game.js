@@ -114,7 +114,7 @@ options.forEach((butt)=>{
     if(attribute == "rock"){ 
         num=0;
     }
-    else if(attribute == ("paper")){
+    else if(attribute == "paper"){
         num = 1;
     }
     else{
