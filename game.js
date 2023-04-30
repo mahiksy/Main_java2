@@ -4,6 +4,28 @@ let userChoice = 0;
 let ListID = ["1","2","3"];
 let actions = ["rock","paper","scissors"];
 
+let getUserChoice = function(num){
+    userChoice = num;
+    console.log(userChoice);
+}
+
+function game(){
+    let pc = computerGame();
+    computerAction.setAttribute('id', actions[pc]);
+    computerAction.style.display="block";
+    let res = playRound(userChoice,pc);
+    next.style.display = "block";
+    start.style.display = "none";
+    resultText.textContent = res;
+    if(pcScore == 5 || userScore == 5){
+        next.style.display = "none";
+        refresh.style.display = "block";
+        resultText.textContent = checkWin();  
+    }
+    scores.textContent = `player: ${userScore} -------------------------------------- ${pcScore} :Computer`
+}
+
+
 let computerGame = function(){
     let randomNumber = Math.floor(Math.random() * (3));
     console.log(randomNumber);
@@ -39,27 +61,6 @@ function checkWin(){
     else{
         return "You Lost!";
     }
-}
-
-function game(){
-    let pc = computerGame();
-    computerAction.setAttribute('id', actions[pc]);
-    computerAction.style.display="block";
-    let res = playRound(userChoice,pc);
-    next.style.display = "block";
-    start.style.display = "none";
-    resultText.textContent = res;
-    if(pcScore == 5 || userScore == 5){
-        next.style.display = "none";
-        refresh.style.display = "block";
-        resultText.textContent = checkWin();  
-    }
-    scores.textContent = `player: ${userScore} -------------------------------------- ${pcScore} :Computer`
-}
-
-let getUserChoice = function(num){
-    userChoice = num;
-    console.log(userChoice);
 }
 
 let refreshGame = function(){
