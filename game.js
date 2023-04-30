@@ -12,7 +12,7 @@ let computerGame = function(){
 
 function playRound(useroption, computer){
     if(actions[useroption] === actions[computer]){
-        return `It's a tigh!`
+        return `It's a tie!`
     }
     else if(actions[useroption] > actions[computer] && actions[useroption] != 3){
         userScore++;
@@ -36,9 +36,6 @@ function checkWin(){
     if(userScore>pcScore){
         return "You Won! Congrats!";
     } 
-    else if(userScore==pcScore){
-        return "It's tigh! Nice Try!";
-    }
     else{
         return "You Lost!";
     }
